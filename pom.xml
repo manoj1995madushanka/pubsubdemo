@@ -16,11 +16,54 @@
 	<properties>
 		<java.version>11</java.version>
 	</properties>
+
+	<!-- The Spring Cloud GCP BOM will manage spring-cloud-gcp version numbers for you. -->
+	<!-- [START pubsub_spring_dependency_manager] -->
+	<dependencyManagement>
+		<dependencies>
+			<!-- [END pubsub_spring_dependency_manager] -->
+			<dependency>
+				<groupId>org.springframework.boot</groupId>
+				<artifactId>spring-boot-dependencies</artifactId>
+				<version>2.7.6</version>
+				<type>pom</type>
+				<scope>import</scope>
+			</dependency>
+			<!-- [START pubsub_spring_dependency_manager] -->
+			<dependency>
+				<groupId>com.google.cloud</groupId>
+				<artifactId>spring-cloud-gcp-dependencies</artifactId>
+				<version>3.4.2</version>
+				<type>pom</type>
+				<scope>import</scope>
+			</dependency>
+		</dependencies>
+	</dependencyManagement>
+	<!-- [END pubsub_spring_dependency_manager] -->
+
 	<dependencies>
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-web</artifactId>
 		</dependency>
+		<!-- [START pubsub_spring_boot_starter] -->
+		<!-- [START pubsub_spring_integration] -->
+		<dependency>
+			<groupId>com.google.cloud</groupId>
+			<artifactId>spring-cloud-gcp-starter-pubsub</artifactId>
+		</dependency>
+		<!-- [END pubsub_spring_boot_starter] -->
+		<dependency>
+			<groupId>org.springframework.integration</groupId>
+			<artifactId>spring-integration-core</artifactId>
+		</dependency>
+		<!-- [END pubsub_spring_integration] -->
+		<!-- [START pubsub_spring_cloud_stream_binder] -->
+		<dependency>
+			<groupId>com.google.cloud</groupId>
+			<artifactId>spring-cloud-gcp-pubsub-stream-binder</artifactId>
+		</dependency>
+		<!-- [END pubsub_spring_cloud_stream_binder] -->
 
 		<dependency>
 			<groupId>org.springframework.boot</groupId>

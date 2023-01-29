@@ -31,3 +31,5 @@ build/
 
 ### VS Code ###
 .vscode/
+/src/main/resources/pubsubdemo-376204-cf04ec55fc02.json
+/src/main/resources/pubsubdemo-376204-952cba9e8d84.json
